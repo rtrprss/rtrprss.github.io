@@ -1,6 +1,30 @@
 /**
  * Site header
  */
+
+
+.top-nav {
+    height: 122px;
+    line-height: 122px;
+    @extend .red, .accent-2, .z-depth-1;
+
+    #logo-container {
+        padding-left: $spacing-unit;
+        padding-right: $spacing-unit;
+    }
+    @include media-query($on-tablet) {
+        height: 64px;
+        line-height: 64px;
+    }
+
+    @include media-query($on-palm) {
+        height: 64px;
+        line-height: 64px;
+    }
+}
+
+
+/*
 .site-header {
     border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
@@ -91,7 +115,7 @@
         }
     }
 }
-
+*/
 
 
 /**
@@ -100,6 +124,10 @@
 .site-footer {
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
+
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin: auto;
 }
 
 .footer-heading {
@@ -169,6 +197,11 @@
  */
 .page-content {
     padding: $spacing-unit 0;
+
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin: auto;
+    @extend .grey, .lighten-4, .z-depth-1;
 }
 
 .page-heading {

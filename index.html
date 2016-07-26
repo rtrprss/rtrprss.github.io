@@ -3,21 +3,76 @@ layout: default
 ---
 
 <div class="home">
+  <h1 class="page-heading">Main-page</h1>
+  <section id="main-portfilio-category">
+    <h1>main-portfolio-category</h1>
+    {{ page.category }}
+    <ul>
+      {% if site.category['programming'] %}
+        {% for post in site.category['programming'] %}
+          <li>
+            <a href="{{ post.url }}">
+              {% assign foundImage = 0 %}
+              {% assign images = post.content | split:"<img " %}
+              {% for image in images %}
+                {% if image contains 'src' %}
+                    {% if foundImage == 0 %}
+                        {% assign html = image | split:"/>" | first %}
+                        <img {{ html }} />
+                        {% assign foundImage = 1 %}
+                    {% endif %}
+                {% endif %}
+              {% endfor %}
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>There are no posts for this tag.</p>
+      {% endif %}    
+    </ul>
 
-  <h1 class="page-heading">Posts</h1>
+  </section>
+  <section id="main-portfilio">
+    <h1>main-portfolio</h1>
+    <ul>
+      {% if site.tags['github-pages'] %}
+        {% for post in site.tags['github-pages'] %}
+          <li>
+            <a href="{{ post.url }}">
+              {% assign foundImage = 0 %}
+              {% assign images = post.content | split:"<img " %}
+              {% for image in images %}
+                {% if image contains 'src' %}
+                    {% if foundImage == 0 %}
+                        {% assign html = image | split:"/>" | first %}
+                        <img {{ html }} />
+                        {% assign foundImage = 1 %}
+                    {% endif %}
+                {% endif %}
+              {% endfor %}
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>There are no posts for this tag.</p>
+      {% endif %}    
+    </ul>
+  </section>
+  <section id="main-post">
+    <h1>main-post</h1>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
