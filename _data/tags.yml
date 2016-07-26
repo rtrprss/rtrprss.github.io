@@ -2,6 +2,8 @@
   name: gitHub Pages
 - slug: jekyll
   name: jekyll
+- slug: html-css
+  name: html&css
 - slug: work
   name: work
 - slug: website
