@@ -196,10 +196,11 @@
  * Page content
  */
 .page-content {
-    padding: $spacing-unit 0;
-
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    // padding: $spacing-unit 0;
+    padding: 60px 0;
+    // max-width: 85%;
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 1));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 1));
     margin: auto;
     @extend .grey, .lighten-4, .z-depth-1;
 }

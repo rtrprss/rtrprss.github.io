@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+@import url("//fonts.googleapis.com/earlyaccess/notosanskr.css");
 /**
  * Reset some basic elements
  */
@@ -308,9 +308,9 @@ pre {
  * Page content
  */
 .page-content {
-  padding: 30px 0;
-  max-width: -webkit-calc(1200px - (30px * 2));
-  max-width: calc(1200px - (30px * 2));
+  padding: 60px 0;
+  max-width: -webkit-calc(1200px - (30px * 1));
+  max-width: calc(1200px - (30px * 1));
   margin: auto; }
 
 .page-heading {

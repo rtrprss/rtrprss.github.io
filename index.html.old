@@ -2,41 +2,12 @@
 layout: default
 ---
 
-<div class="home">
-  <h1 class="page-heading">Main-page</h1>
+<div class="container home">
+  <h1 class="page-heading">RotaryPress</h1>
 
   <p>로터리프레스 웹사이트입니다. 현재 공사중입니다. 9월초에 찾아뵙겠습니다.</p>
-  <section id="main-portfilio-category">
-    <h1>main-portfolio-category</h1>
-    {{ page.category }}
-    <ul>
-      {% if site.category['programming'] %}
-        {% for post in site.category['programming'] %}
-          <li>
-            <a href="{{ post.url }}">
-              {% assign foundImage = 0 %}
-              {% assign images = post.content | split:"<img " %}
-              {% for image in images %}
-                {% if image contains 'src' %}
-                    {% if foundImage == 0 %}
-                        {% assign html = image | split:"/>" | first %}
-                        <img {{ html }} />
-                        {% assign foundImage = 1 %}
-                    {% endif %}
-                {% endif %}
-              {% endfor %}
-              {{ post.title }}
-            </a>
-          </li>
-        {% endfor %}
-      {% else %}
-        <p>There are no posts for this tag.</p>
-      {% endif %}    
-    </ul>
-
-  </section>
   <section id="main-portfilio">
-    <h1>main-portfolio</h1>
+    <h1>Works</h1>
     <ul>
       {% if site.tags['github-pages'] %}
         {% for post in site.tags['github-pages'] %}
@@ -62,7 +33,7 @@ layout: default
       {% endif %}    
     </ul>
   </section>
-  <section id="main-post">
+<!--   <section id="main-post">
     <h1>main-post</h1>
     <ul class="post-list">
       {% for post in site.posts %}
@@ -75,6 +46,6 @@ layout: default
         </li>
       {% endfor %}
     </ul>
-  </section>
+  </section> -->
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 </div>
