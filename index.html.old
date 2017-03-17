@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="container home">
+  <h1 class="page-heading">RotaryPress</h1>
+
+  <p>로터리프레스 웹사이트입니다. 현재 공사중입니다. 9월초에 찾아뵙겠습니다.</p>
+  <section id="main-portfilio">
+    <h1>Works</h1>
+    <ul>
+      {% if site.tags['github-pages'] %}
+        {% for post in site.tags['github-pages'] %}
+          <li>
+            <a href="{{ post.url }}">
+              {% assign foundImage = 0 %}
+              {% assign images = post.content | split:"<img " %}
+              {% for image in images %}
+                {% if image contains 'src' %}
+                    {% if foundImage == 0 %}
+                        {% assign html = image | split:"/>" | first %}
+                        <img {{ html }} />
+                        {% assign foundImage = 1 %}
+                    {% endif %}
+                {% endif %}
+              {% endfor %}
+              {{ post.title }}
+            </a>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>There are no posts for this tag.</p>
+      {% endif %}    
+    </ul>
+  </section>
+<!--   <section id="main-post">
+    <h1>main-post</h1>
+    <ul class="post-list">
+      {% for post in site.posts %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+          <h2>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+          </h2>
+        </li>
+      {% endfor %}
+    </ul>
+  </section> -->
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+</div>

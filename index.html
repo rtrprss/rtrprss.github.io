@@ -1,51 +1,48 @@
----
-layout: default
----
-
-<div class="container home">
-  <h1 class="page-heading">RotaryPress</h1>
-
-  <p>로터리프레스 웹사이트입니다. 현재 공사중입니다. 9월초에 찾아뵙겠습니다.</p>
-  <section id="main-portfilio">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RTRPRSS</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <header>
+    <h1>RotaryPress</h1>
+    <p>geek with the keys.</p>
+  </header>
+  <section class="content">
     <h1>Works</h1>
+    <h2>Website</h2>
     <ul>
-      {% if site.tags['github-pages'] %}
-        {% for post in site.tags['github-pages'] %}
-          <li>
-            <a href="{{ post.url }}">
-              {% assign foundImage = 0 %}
-              {% assign images = post.content | split:"<img " %}
-              {% for image in images %}
-                {% if image contains 'src' %}
-                    {% if foundImage == 0 %}
-                        {% assign html = image | split:"/>" | first %}
-                        <img {{ html }} />
-                        {% assign foundImage = 1 %}
-                    {% endif %}
-                {% endif %}
-              {% endfor %}
-              {{ post.title }}
-            </a>
-          </li>
-        {% endfor %}
-      {% else %}
-        <p>There are no posts for this tag.</p>
-      {% endif %}    
+      <li><a href="http://www.gloyeon.com" target="_blank">Gloyeon Publishing</a></li>
+      <li><a href="http://www.yehyunlaw.com" target="_blank">Yehyun Law firm</a></li>
+      <li><a href="http://www.smartluce.kr" target="_blank">Smartluce</a></li>
+      <li><a href="http://www.leedongwon.kr" target="_blank">Lee, Dong won - portfolio</a></li>
+      <li><a href="http://www.more3d.co.kr" target="_blank">More3D</a></li>
+      <li><a href="http://www.zacup.kr" target="_blank">Zacup-Sil</a></li>
+      <li><a href="http://www.ganaartspace.com" target="_blank">Gana artspace(renewal)</a></li>
+      <li><a href="http://www.gallerychosun.com" target="_blank">Gallery Chosun(renewal)</a></li>
+      <li><a href="http://www.secu114.com" target="_blank">Ventri Sience(partly)</a></li>
+      <li><a href="http://www.applecock.com" target="_blank">Applecock(partly)</a></li>
+    </ul>
+    <h2>Printed matter</h2>
+    <ul>
+      <li>Shin Kyung nam <span>- brochure, poster, postcard</span></li>
+      <li>Lee Dong won <span>- brochure, poster, postcard, advertising design for magazine</span></li>
+      <li>Lena Son <span>- brochure</span></li>
+      <li>Kim, Nam hi <span>- advertising design for magazine</span></li>
+      <li>Jin, Hyoung joo <span>- postcard</span></li>
+      <li>Shin, Dong im <span>- leaflet</span></li>
+      <li>Artist group, Dagaserda <span>- leaflet</span></li>
     </ul>
   </section>
-<!--   <section id="main-post">
-    <h1>main-post</h1>
-    <ul class="post-list">
-      {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-          <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          </h2>
-        </li>
-      {% endfor %}
-    </ul>
-  </section> -->
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-</div>
+  <footer>
+    <p>copyright&copy2014-2016 By <a href="http://www.rtrprss.com/">RTRPRSS</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
