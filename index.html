@@ -9,6 +9,39 @@
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      padding: 0 0.8rem;
+      min-height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      background-image: radial-gradient( circle 506px at 50.6% 16.5%,  #fff 5.5%, #ddd 100.2% );
+    }
+
+    header, footer, .content {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    header {
+      padding: 1rem 0;
+    }
+    header h1 {
+      margin: 0.4rem 0;
+    }
+    header p {
+      margin: 0.2rem 0;
+    }
+    footer p {
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -16,8 +49,8 @@
     <p>geek with the keys.</p>
   </header>
   <section class="content">
-    <h1>Works</h1>
-    <h2>Website</h2>
+    <h2>Works</h2>
+    <h3>Website</h3>
     <ul>
       <li><a href="http://www.gloyeon.com" target="_blank">Gloyeon Publishing</a></li>
       <li><a href="http://www.yehyunlaw.com" target="_blank">Yehyun Law firm</a></li>
@@ -30,7 +63,7 @@
       <li><a href="http://www.secu114.com" target="_blank">Ventri Sience(partly)</a></li>
       <li><a href="http://www.applecock.com" target="_blank">Applecock(partly)</a></li>
     </ul>
-    <h2>Printed matter</h2>
+    <h3>Printed matter</h3>
     <ul>
       <li>Shin Kyung nam <span>- brochure, poster, postcard</span></li>
       <li>Lee Dong won <span>- brochure, poster, postcard, advertising design for magazine</span></li>
@@ -42,7 +75,7 @@
     </ul>
   </section>
   <footer>
-    <p>copyright&copy2014-2019 By <a href="http://www.rtrprss.com/">RTRPRSS</a>. All rights reserved.</p>
+    <p>&copy2019 By <a href="http://www.rtrprss.com/">RTRPRSS</a>. All rights reserved.</p>
   </footer>
 </body>
 </html>
